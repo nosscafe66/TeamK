@@ -1,0 +1,13 @@
+footer {
+    height: 77px;
+    text-align: center;
+    background-color: #0a3d62; /* 青に近いネイビー色に */
+    color: #ffffff; /* テキストを白に */
+    bottom: 0;
+    position: fixed; /* 下に固定するための追加のスタイル */
+    width: 100%; /* 画面全体の幅に合わせる */
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1); /* 上向きの影を追加 */
+    display: flex; /* フレックスボックスを利用して、内容を中央に配置するための設定を開始 */
+    align-items: center;
+    justify-content: center;
+}

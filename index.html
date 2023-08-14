@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="sp.css" media="screen and (max-width:767px)">
+<link rel="stylesheet" href="tab.css" media="screen and (min-width:768px)">
+<link rel="stylesheet" href="tab.css" media="screen and (min-width:481px) and (max-width:1024px)">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/button.css">
+<link rel="stylesheet" href="css/body.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/top.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/canvas.css">
+<link rel="stylesheet" href="css/main.css">
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+<script>
+  $(function() {
+       $("#header").load("Template/header.html");
+       $("#side").load("Template/sidebar.html");
+       $("#dataregist").load("Template/dataregist.html");
+       $("#footer").load("Template/footer.html");
+});
+</script>
+<title>データ登録画面</title>
+</head>
+<body>
+  <div id="header"></div>
+    <main>
+      <div id="dataregist"></div>
+    </main>
+  <div id="footer"></div>
+</body>
+</html>

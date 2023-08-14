@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>Post</title>
+<link rel="icon" href="/favicon/android-chrome-36x36.ico">
+<meta http-equiv="content-type">
+<meta http-equiv="content-type" charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="../css/afterpage.css">
+<link rel="stylesheet" href="../css/button.css">
+<link rel="stylesheet" href="../css/table.css">
+<link rel="stylesheet" href="../css/body.css">
+<link rel="stylesheet" href="../css/header.css">
+</head>
+<body bgcolor="slategray">
+<div>
+<h2>■Search Result</h2>
+</div>
+<hr>
+<div id="app">{{username}} = {% username %}</div>
+<div id="app">userinfo = {% userinfo %}</div>
+
+  {% result %}
+
+<hr>
+<div class="top">
+    <button type="button" onclick="location.href='/Top/index.html'">Back to Top page</button>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data() {
+        return {
+          message: "Output Data!"
+        }
+      }
+    });
+  </script>
+</html>

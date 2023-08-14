@@ -1,0 +1,43 @@
+.cp_iptxt {
+    position: relative;
+    width: 40.33%;
+    margin: 40px 3%;
+}
+
+.cp_iptxt input[type='date'] {
+    font: 16px 'Roboto', sans-serif; /* フォントとサイズを変更 */
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5em 0.5em 0.5em 40px; /* パディングを少し変更 */
+    letter-spacing: 1px;
+    border: 2px solid #0a3d62; /* 青に近いネイビー色のボーダー */
+    border-radius: 5px; /* 角を少し丸める */
+    transition: border-color 0.3s, box-shadow 0.3s; /* 境界色とボックスシャドウのアニメーションを追加 */
+}
+
+.cp_iptxt input[type='date']:focus {
+    outline: none;
+    border-color: #f39c12; /* フォーカス時にボーダーをオレンジに変更 */
+    box-shadow: 0 0 5px rgba(243, 156, 18, 0.5); /* フォーカス時のシャドウ */
+}
+
+.cp_iptxt i {
+    position: absolute;
+    top: 50%;
+    left: 10px; /* アイコンの位置を調整 */
+    transform: translateY(-50%); /* アイコンを垂直方向の中央に位置させる */
+    padding: 9px 5px;
+    transition: 0.3s;
+    color: #0a3d62; /* アイコンを青に近いネイビー色に */
+}
+
+.cp_iptxt::after {
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin-top: -1px;
+    content: '';
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    border-color: #f39c12; /* オレンジ色に合わせる */
+}

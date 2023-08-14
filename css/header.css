@@ -1,0 +1,67 @@
+* {
+   box-sizing: border-box;
+   font-family: 'Roboto', sans-serif; /* モダンなフォント */
+}
+
+header {
+   padding: 30px 4% 10px;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   background-color: #0a3d62; /* 青に近いネイビー */
+   display: flex;
+   align-items: center;
+   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 影を追加して浮き立たせる */
+}
+
+h1 {
+   margin: 0; 
+   padding: 0;
+   font-size: 24px; /* サイズを少し大きく */
+   color: #f39c12; /* タイトルをオレンジ色に */
+}
+
+a {    
+   text-decoration: none;
+   color: #ffffff;
+   transition: color 0.3s ease; /* スムーズな色の変更 */
+}
+
+a:hover {
+   color: #f39c12; /* ホバー時にオレンジに */
+}
+
+nav {
+   margin: 0 0 0 auto;
+}
+
+ul {
+   list-style: none;
+   margin: 0;
+   display: flex;
+}
+
+li {
+   margin: 0 0 0 15px;
+   font-size: 16px; /* サイズを少し大きく */
+}
+
+button {
+   -moz-appearance: none;
+   -webkit-appearance: none;
+   appearance: none;
+   margin: 1em 0;
+   padding: 0.6em 1em;
+   font-size: 1em;
+   background-color: #f39c12; /* オレンジ */
+   color: #ffffff; /* テキストカラーを白に */
+   cursor: pointer;
+   border-radius: 5px; /* 角の丸みをもう少し大きく */
+   border: 0;
+   transition: background-color 0.3s, transform 0.3s; /* ホバー時の背景色と変形の変更を滑らかに */
+}
+
+button:hover {
+   background-color: #e67e22; /* 濃いオレンジ色に */
+   transform: scale(1.05); /* 少し拡大する */
+}
