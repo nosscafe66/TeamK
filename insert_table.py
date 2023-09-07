@@ -13,7 +13,7 @@ import os
 import sys
 import csv
 
-DB_NAME = "Kadai_DB"
+DB_NAME = "TeamK"
 FILE_PATH = "./sql/"
 CSV_FILE = "./csv/" + sys.argv[1]
 
