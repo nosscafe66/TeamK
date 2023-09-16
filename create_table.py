@@ -11,7 +11,7 @@ import sqlite3
 import os
 import sys
 
-DB_NAME = "Kadai_DB"
+DB_NAME = "TeamK.db"
 FILE_PATH = "./sql/"
 
 #引数取得
