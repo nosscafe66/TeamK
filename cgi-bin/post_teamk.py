@@ -20,13 +20,16 @@ TABLE_NAME="task_tbl"
 
 conn = sqlite3.connect(DB_NAME)
 cur = conn.cursor()
-
+print(form["task"].value)
+print(form["birthday"].value)
+print(form["mailaddress"].value)
+print(form["created_at"].value)
 def register_data():
     cur.execute('INSERT INTO {} values(?, ?, ?, ?)'.format(TABLE_NAME),
                   (form["task"].value,
                   form["birthday"].value,
                   form["mailaddress"].value,
-                  form["date"].value))
+                  form["created_at"].value))
     afterpage = codecs.open('./afterpage/RegisterData.html', 'r', 'utf-8').read()
     print(afterpage)
     conn.commit()
@@ -34,9 +37,8 @@ def register_data():
     conn.close()
 
 def main():
-  try:
-    pass
-    # register_data()
+  try:    
+    register_data()
   except Exception as exceptmessage:
     return
 
