@@ -14,24 +14,24 @@ print()
 form = cgi.FieldStorage()
 form_check = 0
 
-DB_NAME = '{your-Database-name}'
+DB_NAME = 'TeamK.db'
 QUERY_PATH= "./sql/Regist_data_insert.sql"
-TABLE_NAME="task_table"
+TABLE_NAME="task_tbl"
 
 conn = sqlite3.connect(DB_NAME)
 cur = conn.cursor()
 
-# def register_data():
-#     cur.execute('INSERT INTO {} values(?, ?, ?, ?)'.format(TABLE_NAME),
-#                   (form["date"].value,
-#                   form["username"].value,
-#                   form["mailaddress"].value,
-#                   form["task"].value))
-#     afterpage = codecs.open('./afterpage/RegisterData.html', 'r', 'utf-8').read()
-#     print(afterpage)
-#     conn.commit()
-#     cur.close()
-#     conn.close()
+def register_data():
+    cur.execute('INSERT INTO {} values(?, ?, ?, ?)'.format(TABLE_NAME),
+                  (form["task"].value,
+                  form["birthday"].value,
+                  form["mailaddress"].value,
+                  form["date"].value))
+    afterpage = codecs.open('./afterpage/RegisterData.html', 'r', 'utf-8').read()
+    print(afterpage)
+    conn.commit()
+    cur.close()
+    conn.close()
 
 def main():
   try:
