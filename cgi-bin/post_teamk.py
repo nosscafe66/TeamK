@@ -20,10 +20,6 @@ TABLE_NAME="task_tbl"
 
 conn = sqlite3.connect(DB_NAME)
 cur = conn.cursor()
-print(form["task"].value)
-print(form["birthday"].value)
-print(form["mailaddress"].value)
-print(form["created_at"].value)
 def register_data():
     cur.execute('INSERT INTO {} values(?, ?, ?, ?)'.format(TABLE_NAME),
                   (form["task"].value,

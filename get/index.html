@@ -25,36 +25,11 @@
     <div id="header"></div>
     <main>
     <div class="selectdata">
-      <form action="/cgi-bin/get.py" method="get">
-      <div class="cp_ipselect">
-      <select name="username" id="username" value=" " class="cp_sl02" required>
-          <option value="" hidden disabled selected></option>
-          <option value="yuto">yuto</option>
-          <option value="micheal">micheal</option>
-          <option value="jecica">jecica</option>
-          <option value="bush">bush</option>
-          <option value="yu-ri">yu-ri</option>
-          <option value="kohei">kohei</option>
-      </select>
-      <span class="cp_sl02_highlight"></span>
-      <span class="cp_sl02_selectbar"></span>
-      <label class="cp_sl02_selectlabel">Select</label>
-      </div>
-      <div class="cp_ipselect">
-      <select name="userinfo" id="userinfo" value=" " class="cp_sl02" required>
-          <option value="" hidden disabled selected></option>
-          <option value="birthday">birthday</option>
-          <option value="mailaddress">mailaddress</option>
-          <option value="job">job</option>
-          <option value="hobby">hobby</option>
-      </select>
-      <span class="cp_sl02_highlight"></span>
-      <span class="cp_sl02_selectbar"></span>
-      <label class="cp_sl02_selectlabel">Select</label>
-      </div>
-      <div>
-      <button>Search Data</button>
-    </div>
+      <form action="/cgi-bin/get.py" method="get" class="search-form-006">
+        <label>
+          <input type="text" placeholder="キーワードを入力">
+      </label>
+      <button type="submit" aria-label="検索"></button>
   </form>
   </div>
   <form action="/cgi-bin/make_csv.py" method="get">
