@@ -13,6 +13,7 @@ print("Content-Type: text/html")
 print()
 
 form = cgi.FieldStorage()
+task = form.getvalue("task", "未入力")
 form_check = 0
 
 DB_NAME = 'TeamK.db'
@@ -31,6 +32,7 @@ result = '''
 # <th>created_at</th>
 </tr>
 '''
+print(task)
 def get_account_list(result:str) -> str:
     for data in account_table_list:
         if form["task"].value in data:
