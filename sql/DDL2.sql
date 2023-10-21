@@ -1,5 +1,4 @@
 CREATE TABLE IF NOT EXISTS {table_name} (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
   task VARCHAR(255),
   birthday VARCHAR(255),
   mailaddress VARCHAR(255),
