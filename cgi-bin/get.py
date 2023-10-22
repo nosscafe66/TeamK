@@ -48,19 +48,19 @@ def get_account_list(result:str) -> str:
             #conn.commit()
             #cur.close()
             #conn.close()
-        elif not form["task"].value in data:
-            result += "<tr>"
-            result += "<td> Nothing Data </td>"
-            result += "<td> Nothing Data </td>"
-            result += "<td> Nothing Data </td>"
-            result += "</tr>"
-            afterpage = codecs.open('./afterpage/after.html', 'r', 'utf-8').read()
-            afterpage = afterpage.replace('{% task %}', "Nothing Register")
-            afterpage = afterpage.replace('{% userinfo %}', "Nothing Register")
-            afterpage = afterpage.replace('{% result %}', result)
-            # conn.commit()
-            #cur.close()
-            #conn.close()
+        # elif not form["task"].value in data:
+        #     result += "<tr>"
+        #     result += "<td> Nothing Data </td>"
+        #     result += "<td> Nothing Data </td>"
+        #     result += "<td> Nothing Data </td>"
+        #     result += "</tr>"
+        #     afterpage = codecs.open('./afterpage/after.html', 'r', 'utf-8').read()
+        #     afterpage = afterpage.replace('{% task %}', "Nothing Register")
+        #     afterpage = afterpage.replace('{% userinfo %}', "Nothing Register")
+        #     afterpage = afterpage.replace('{% result %}', result)
+        #     # conn.commit()
+        #     #cur.close()
+        #     #conn.close()
     return afterpage
 
 def main():

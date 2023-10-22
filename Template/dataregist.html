@@ -1,21 +1,23 @@
 <div class="top">
-<form action="/cgi-bin/post_teamk.py" method="post">
-  <div class = "square_box">
-    <div class="cp_iptxt">
-      <input type="text" id="task" name="task" placeholder="task">
+  <form action="/cgi-bin/post_teamk.py" method="post" class="form-container">
+    <div class="form-inner">
+      <div class="square_box">
+        <div class="cp_iptxt">
+          <input type="text" id="task" name="task" placeholder="Task">
+        </div>
+        <div class="cp_iptxt">
+          <input type="date" id="birthday" name="birthday" placeholder="Birthday">
+        </div>
+        <div class="cp_iptxt">
+          <input type="text" id="mailaddress" name="mailaddress" placeholder="Email">
+        </div>
+        <div class="cp_iptxt">
+          <input type="date" id="date" name="created_at" placeholder="Created At">
+        </div>
+        <div class="submit-container">
+          <button id="submit-btn">Submit</button>
+        </div>
+      </div>
     </div>
-    <div class="cp_iptxt">
-      <input type="date" id="birthday" name="birthday" placeholder="birthday"/>
-    </div>
-    <div class="cp_iptxt">
-      <input type="text" id="mailaddress" name="mailaddress" placeholder="mailaddress"/>
-    </div>
-    <div class="cp_iptxt">
-      <input type="date" id="date" name="created_at" placeholder="created_at"/>
-    </div>  
-  <div>
-  <div>
-        <button id ="データ登録">Submit</button>
-  </div>
-</form>
+  </form>
 </div>

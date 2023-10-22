@@ -1,0 +1,57 @@
+/* ベースのスタイル */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+  
+  /* フォーム全体のコンテナスタイル */
+  .form-container {
+    max-width: 400px;
+    margin: auto;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: #333;
+  }
+  
+  /* 入力フィールドのスタイル */
+  .cp_iptxt {
+    position: relative;
+    margin-bottom: 20px; /* spacing between inputs */
+  }
+  
+  .cp_iptxt input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+  
+  /* プレースホルダーの色 */
+  .cp_iptxt input::placeholder {
+    color: #aaa;
+  }
+  
+  /* ボタンのスタイリング */
+  .submit-container {
+    text-align: center; /* center the button */
+  }
+  
+  #submit-btn {
+    background-color: #007bff; /* the blue color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #submit-btn:hover {
+    background-color: #ff4500; /* the orange color */
+  }
+  
