@@ -35,7 +35,7 @@
   </div>
   <form action="/cgi-bin/make_csv.py" method="get">
     <div>
-    <button>csv file download</button>
+    <button id="download-button">csv file download</button>
     </div>
   </form>
     </main>
@@ -51,6 +51,22 @@
         alert('タスクIDを入力してください。');
       }
     });
+
+    // ボタンがクリックされたときの動作を定義します。
+    $("#download-button").click(function(e){
+      e.preventDefault(); // 既定のボタンのクリック動作をキャンセル
+
+      var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+      if (isMobile) {
+        // スマートフォンやタブレットなどのモバイルデバイス用の処理
+        window.location.href = '/cgi-bin/download_csv.py'; // ここには、モバイルデバイス用のCSV作成スクリプトのパスを指定します。
+      } else {
+        // デスクトップブラウザ用の処理
+        window.location.href = '/cgi-bin/make_csv.py'; // ここには、通常のCSV作成スクリプトのパスを指定します。
+      }
+    });
   });
-  </script>
+</script>
+
   
