@@ -1,4 +1,9 @@
-build:
-  commands:
-    - python -m pip install --upgrade pip
-    - pip install -r requirements.txt
+services:
+  - type: web
+    name: SiteTemplate_Kei
+    env: python
+    build:
+    commands:
+      - python -m pip install --upgrade pip
+      - pip install -r requirements.txt
+    start: python cgiserver.py
