@@ -1,1 +1,1 @@
-web: gunicorn app:cgiserver
+web: gunicorn cgiserver:app
