@@ -19,58 +19,51 @@ form_check = 0
 DB_NAME = 'TeamK.db'
 conn = sqlite3.connect(DB_NAME)
 cur = conn.cursor()
+task_id = form["task"].value
 
-cur.execute('SELECT * FROM task_tbl')
+cur.execute('SELECT * FROM task_tbl where task_id = ?',(task_id))
 account_table_list = cur.fetchall()
 
-result = '''
-<table border="1">
-<tr>
-<th>task</th>
-<th>birthday</th>
-<th>mailaddress</th>
-# <th>created_at</th>
-</tr>
-'''
-print(task)
-def get_account_list(result:str) -> str:
-    for data in account_table_list:
-        if form["task"].value in data:
+def get_account_list() -> str:
+    result = '''
+    <table border="1">
+    <tr>
+    <th>task_id</th>
+    <th>task</th>
+    <th>due_date</th>
+    <th>mailaddress</th>
+    <th>created_at</th>
+    </tr>
+    '''
+    if account_table_list:
+        for row in account_table_list:
             result += "<tr>"
-            result += "<td>" + str(data[0]) + "</td>"
-            result += "<td>" + str(data[1]) + "</td>"
-            result += "<td>" + str(data[2]) + "</td>"
+            for item in row:
+                result += f"<td>{item}</td>"
             result += "</tr>"
-            afterpage = codecs.open('./afterpage/after.html', 'r', 'utf-8').read()
-            afterpage = afterpage.replace('{% task %}', str(data[0]))
-            afterpage = afterpage.replace('{% userinfo %}', str(data[1]))
-            afterpage = afterpage.replace('{% result %}', result)
-            #conn.commit()
-            #cur.close()
-            #conn.close()
-        # elif not form["task"].value in data:
-        #     result += "<tr>"
-        #     result += "<td> Nothing Data </td>"
-        #     result += "<td> Nothing Data </td>"
-        #     result += "<td> Nothing Data </td>"
-        #     result += "</tr>"
-        #     afterpage = codecs.open('./afterpage/after.html', 'r', 'utf-8').read()
-        #     afterpage = afterpage.replace('{% task %}', "Nothing Register")
-        #     afterpage = afterpage.replace('{% userinfo %}', "Nothing Register")
-        #     afterpage = afterpage.replace('{% result %}', result)
-        #     # conn.commit()
-        #     #cur.close()
-        #     #conn.close()
-    return afterpage
+    else:
+        result += "<tr><td colspan='5'>Nothing Data</td></tr>"
+
+    result += "</table>"
+
+    # ここで、'result' を 'afterpage' のテンプレートに適用します。
+    afterpage_template = codecs.open('./afterpage/after.html', 'r', 'utf-8').read()
+    afterpage_content = afterpage_template.replace('{% result %}', result)
+
+    return afterpage_content
+
+# ... [中略] ...
 
 def main():
     try:
-        result_page=get_account_list(result)
+        result_page = get_account_list()
         cur.close()
         conn.close()
         print(result_page)
-    except Exception as exceptmessage:
-        print(exceptmessage)
+    except Exception as e:
+        # ここでエラーメッセージを出力します。
+        print(f"<p>An error occurred: {e}</p>")
+
 
 if __name__ == "__main__":
     main()

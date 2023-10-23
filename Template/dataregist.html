@@ -1,23 +1,42 @@
 <div class="top">
-  <form action="/cgi-bin/post_teamk.py" method="post" class="form-container">
+  <form action="/cgi-bin/post_teamk.py" method="post" class="form-container" onsubmit="return validateForm()">
     <div class="form-inner">
-      <div class="square_box">
+      <div class="form-group">
+        <label for="task">Task Description:</label>
         <div class="cp_iptxt">
-          <input type="text" id="task" name="task" placeholder="Task">
-        </div>
-        <div class="cp_iptxt">
-          <input type="date" id="birthday" name="birthday" placeholder="Birthday">
-        </div>
-        <div class="cp_iptxt">
-          <input type="text" id="mailaddress" name="mailaddress" placeholder="Email">
-        </div>
-        <div class="cp_iptxt">
-          <input type="date" id="date" name="created_at" placeholder="Created At">
-        </div>
-        <div class="submit-container">
-          <button id="submit-btn">Submit</button>
+          <input type="text" id="task" name="task" placeholder="What do you need to do?" required>
         </div>
       </div>
+      <div class="form-group">
+        <label for="due_date">Due Date:</label>
+        <div class="cp_iptxt">
+          <input type="date" id="due_date" name="due_date" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="mailaddress">Notification Email:</label>
+        <div class="cp_iptxt">
+          <input type="text" id="mailaddress" name="mailaddress" placeholder="Where should we send reminders?" required>
+        </div>
+      </div>
+      <div class="form-group" style="display: none;">
+        <label for="created_at">Created At:</label>
+        <div class="cp_iptxt">
+          <input type="date" id="date" name="created_at">
+        </div>
+      </div>
+      <div class="submit-container">
+        <button type="submit" name="action" value="add_task" id="add-task-btn">Add Task</button>
+      </div>
     </div>
+  </form>
+  <form action="/cgi-bin/post_teamk.py" method="post" id="deleteTaskForm" class="form-container">
+    <div class="form-group">
+      <label for="delete_task_id">Delete Task:</label>
+      <div class="cp_iptxt">
+        <input type="text" id="delete_task_id" name="delete_task_id" placeholder="Enter Task ID to delete">
+      </div>
+    </div>
+    <button type="submit" name="action" value="delete_task">Delete Task</button>
   </form>
 </div>
