@@ -45,14 +45,10 @@ def get_account_list() -> str:
         result += "<tr><td colspan='5'>Nothing Data</td></tr>"
 
     result += "</table>"
-
-    # ここで、'result' を 'afterpage' のテンプレートに適用します。
     afterpage_template = codecs.open('./afterpage/after.html', 'r', 'utf-8').read()
     afterpage_content = afterpage_template.replace('{% result %}', result)
 
     return afterpage_content
-
-# ... [中略] ...
 
 def main():
     try:

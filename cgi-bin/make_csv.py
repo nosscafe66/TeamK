@@ -26,14 +26,14 @@ account_table_list = cur.fetchall()
 now = datetime.datetime.now()
 filename = './csv/account_list_' + now.strftime('%Y%m%d_%H%M%S') + '.csv'
 
-def make_file(account_table_list:str) -> str:
-    for data in account_table_list:
-      count=0
-      now_str = datetime.datetime.now().strftime('%H:%M:%S.%f')
-      print()
-      with open(filename, 'a', newline="") as csvfile:
-        writer = csv.writer(csvfile)
-        writer.writerow(["{},{},{},{},{}".format(now_str,data[count],data[count+1],data[count+2],data[count+3])])
+def make_file(account_table_list:list) -> None:
+    header = ["TaskID", "Task", "DueDate", "MailAddress", "CreatedAt","Time"]
+    with open(filename, 'a', newline="") as csvfile:
+        writer = csv.writer(csvfile, quoting=csv.QUOTE_NONE, escapechar='\\')
+        writer.writerow(header)
+        for data in account_table_list:
+            now_str = datetime.datetime.now().strftime('%H:%M:%S.%f')
+            writer.writerow(list(data) + [now_str])
 
 def download_csvfile(csvfile:str) -> str:
     afterpage = codecs.open('./afterpage/DataUnload.html', 'r', 'utf-8').read()

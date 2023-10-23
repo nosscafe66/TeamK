@@ -20,7 +20,6 @@
        $("#footer").load("../Template/footer.html");
 });
 </script>
-
   </head>
   <body bgcolor="slategray">
     <div id="header"></div>
@@ -29,7 +28,7 @@
     <div class="selectdata">
       <form action="/cgi-bin/get.py" method="get" class="search-form-006">
         <label>
-          <input type="text" name="task" id="task" placeholder="Enter keyword">
+          <input type="text" name="task" id="task" placeholder="Enter id number">
       </label>
       <button type="submit" aria-label="検索"></button>
   </form>
@@ -46,13 +45,11 @@
 <script>
   $(document).ready(function(){
     $(".search-form-006").submit(function(e){
-      var searchQuery = $.trim($("#task").val()); // 検索ボックスの値を取得し、トリム（空白の削除）を行います
-  
-      if(searchQuery.length == 0) { // 文字列の長さが0、つまり入力がない場合
-        e.preventDefault(); // 通常のフォーム送信をキャンセルします
-        alert('キーワードを入力してください。'); // ユーザーにメッセージを表示します
+      var searchQuery = $.trim($("#task").val());
+      if(searchQuery.length == 0) {
+        e.preventDefault();
+        alert('タスクIDを入力してください。');
       }
-      // 文字列の長さが0以上の場合、フォームは通常通り送信されます
     });
   });
   </script>
