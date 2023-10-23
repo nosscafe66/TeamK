@@ -1,1 +1,1 @@
-web: gunicorn cgiserver:app
+web: apache2-foreground
