@@ -1,1 +1,1 @@
-web: python cgiserver.py
+web: gunicorn app:app
