@@ -1,1 +1,1 @@
-web: apache2-foreground
+web: python cgiserver.py
