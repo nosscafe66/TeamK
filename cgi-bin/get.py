@@ -21,7 +21,7 @@ conn = sqlite3.connect(DB_NAME)
 cur = conn.cursor()
 task_id = form["task"].value
 
-cur.execute('SELECT * FROM task_tbl where task_id = ?',(task_id))
+cur.execute('SELECT * FROM task_tbl where task_id = ?', (task_id,))
 account_table_list = cur.fetchall()
 
 def get_account_list() -> str:
