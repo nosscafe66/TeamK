@@ -37,7 +37,7 @@ def main():
 
     try:
         # データベースからデータを取得
-        conn = sqlite3.connect(DB_NAME)
+        conn = sqlite3.connect("TeamK.db")
         cur = conn.cursor()
         account_table_list = cur.execute('SELECT * FROM task_tbl').fetchall()
         cur.close()
