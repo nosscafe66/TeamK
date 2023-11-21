@@ -34,6 +34,7 @@ def make_csv_content(account_table_list):
 
 def main():
     user_agent = os.environ.get('HTTP_USER_AGENT', '')
+    print(user_agent)
 
     try:
         # データベースからデータを取得
