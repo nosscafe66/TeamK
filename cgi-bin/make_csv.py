@@ -46,14 +46,9 @@ def main():
 
         csv_content = make_csv_content(account_table_list)
 
-        if is_mobile_device(user_agent):
-            # スマートフォン用の処理
-            print("Content-Type: application/octet-stream")
-        else:
-            # PC用の処理
-            print("Content-Type: text/csv")
-        
+        print("Content-Type: text/csv")
         print("Content-Disposition: attachment; filename=\"account_list.csv\"")
+        print("Cache-Control: no-cache, no-store, must-revalidate")
         print()
         print(csv_content)
 
