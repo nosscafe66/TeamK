@@ -11,11 +11,13 @@ import cgitb
 import sqlite3
 import csv
 import io
+import os
 import datetime
 
 cgitb.enable()
 
-DB_NAME = 'TeamK.db'
+def is_mobile_device(user_agent):
+    return 'mobi' in user_agent.lower()
 
 def make_csv_content(account_table_list):
     output = io.StringIO()
@@ -31,6 +33,8 @@ def make_csv_content(account_table_list):
     return output.getvalue()
 
 def main():
+    user_agent = os.environ.get('HTTP_USER_AGENT', '')
+
     try:
         # データベースからデータを取得
         conn = sqlite3.connect(DB_NAME)
@@ -41,8 +45,13 @@ def main():
 
         csv_content = make_csv_content(account_table_list)
 
-        # CSVファイルをダウンロードするためのHTTPヘッダー
-        print("Content-Type: text/csv")
+        if is_mobile_device(user_agent):
+            # スマートフォン用の処理
+            print("Content-Type: application/octet-stream")
+        else:
+            # PC用の処理
+            print("Content-Type: text/csv")
+        
         print("Content-Disposition: attachment; filename=\"account_list.csv\"")
         print()
         print(csv_content)
