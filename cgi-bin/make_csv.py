@@ -34,7 +34,6 @@ def make_csv_content(account_table_list):
 
 def main():
     user_agent = os.environ.get('HTTP_USER_AGENT', '')
-    print(user_agent)
 
     try:
         # データベースからデータを取得
@@ -46,9 +45,14 @@ def main():
 
         csv_content = make_csv_content(account_table_list)
 
-        print("Content-Type: text/csv")
+        if is_mobile_device(user_agent):
+            # スマートフォン用の処理
+            print("Content-Type: application/octet-stream")
+        else:
+            # PC用の処理
+            print("Content-Type: text/csv")
+        
         print("Content-Disposition: attachment; filename=\"account_list.csv\"")
-        print("Cache-Control: no-cache, no-store, must-revalidate")
         print()
         print(csv_content)
 
